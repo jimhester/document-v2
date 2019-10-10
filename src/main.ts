@@ -29,7 +29,7 @@ async function run() {
       `https://x-access-token:${token}@`
     );
 
-    await exec.exec("git", ["push", "pr", `HEAD:${headBranch}`]);
+    await exec.exec("git", ["push", headCloneURL2, `HEAD:${headBranch}`]);
   } catch (error) {
     core.setFailed(error.message);
   }
